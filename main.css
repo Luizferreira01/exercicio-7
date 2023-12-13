@@ -2,12 +2,10 @@ form {
     margin-top: 40px;
 }
 
-input, textarea, button {
-    display: block;
+input, button {
     padding: 8px;
     margin-bottom: 8px;
     width: 100%;
-    resize: none;
 }
 
 button {
@@ -21,15 +19,20 @@ button {
     cursor: pointer;
 }
 
-button:hover {
+button {
     background-color: blue;
-}
-.succes-message{
-    background-color: blue;
-    padding: 16px;
-    color: aliceblue;
 }
 
 span {
     display: none;
+}
+
+#campocorreto{
+    border-radius: 2px;
+    background-color: green;
+}
+
+#erro{
+    border-radius: 2px;
+    background-color: red;
 }
