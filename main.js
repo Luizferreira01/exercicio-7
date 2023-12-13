@@ -1,29 +1,29 @@
 const form = document.getElementById('form');
 const campoA = document.getElementById('campoA');
 const campoB = document.getElementById('campoB');
-const Acerto = document.getElementById('Campo correto');
-const erro = document.getElementById('erro')
+const acerto = document.getElementById('campocorreto');
+const erro = document.getElementById('erro');
 
-function CompararCampo(campoA, campoB) {
-    return campoA > campoB;
+function comparandocampo(saldo, saque){
+    return saldo > saque;
 }
 
 form.addEventListener('submit', function(e){
     e.preventDefault();
 
-    let validarform = CompararCampo(CampoA.valueAsNumber, CampoB.valueAsNumber)
-if (validarform){
-    Acerto.style.display = 'block'
-    campoA.value= ' ';
-    campoB.value= ' ';
-}
+    let validarForm = comparandocampo(campoA.valueAsNumber, campoB.valueAsNumber)
+    if(validarForm){
+        acerto.style.display = 'block';
+        campoA.value='';
+        campoB.value='';
+    }
 })
 
 campoA.addEventListener('keyup', function(e){
-    let validarform = CompararCampo(campoA.valueAsNumber, campoB.valueAsNumber)
-    if(!validarform){
+    let validarForm = comparandocampo(campoA.valueAsNumber, campoB.valueAsNumber)
+    if(!validarForm){
         erro.style.display = 'block';
-        Acerto.style.display = 'none';
+        acerto.style.display = 'none';
     } else{
         erro.style.display = 'none';
     }
