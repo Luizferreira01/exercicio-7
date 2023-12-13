@@ -29,3 +29,7 @@ button:hover {
     padding: 16px;
     color: aliceblue;
 }
+
+span {
+    display: none;
+}
