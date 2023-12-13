@@ -1,19 +1,31 @@
-const form = document.getElementById('form-validaçao')
+const form = document.getElementById('form');
+const campoA = document.getElementById('campoA');
+const campoB = document.getElementById('campoB');
+const Acerto = document.getElementById('Campo correto');
+const erro = document.getElementById('erro')
 
-function validanumero(numerocompleto) {
-    const numeroComoArray = numerocompleto.split(' '); 
-    return numeroComoArray.length >= 2;
+function CompararCampo(campoA, campoB) {
+    return campoA > campoB;
 }
 
 form.addEventListener('submit', function(e){
     e.preventDefault();
 
-    const numerocompleto = document.getElementById('numero-completo')
-    if (!validanumero(numero-completo.value)) {
-        alert("o numero nao esta completo");
-    } else {
-        alert("tudo certo");
-    }
+    let validarform = CompararCampo(CampoA.valueAsNumber, CampoB.valueAsNumber)
+if (validarform){
+    Acerto.style.display = 'block'
+    campoA.value= ' ';
+    campoB.value= ' ';
+}
 })
 
-console.log(form);
+campoA.addEventListener('keyup', function(e){
+    let validarform = CompararCampo(campoA.valueAsNumber, campoB.valueAsNumber)
+    if(!validarform){
+        erro.style.display = 'block';
+        Acerto.style.display = 'none';
+    } else{
+        erro.style.display = 'none';
+    }
+
+})
